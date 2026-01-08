@@ -1,0 +1,13 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background("brown");
+  stroke("green");
+  strokeWeight(10);
+  fill("#AEA2DE");
+  square(200,20,80,10)
+  circle(300,200,50,);
+  triangle(100,20,40,10,50,100)
+}
