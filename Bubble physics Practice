@@ -1,0 +1,36 @@
+let bubbles = [];
+
+function setup() {
+  createCanvas(400, 400);
+  for (let i=0; i<5; i++){
+    bubbles.push(new bubble())
+  }
+}
+
+function draw() {
+  background(220);
+  for (let a of bubbles){
+    a.draw();
+  }
+}
+
+function bubble(){
+  this.x = random(0, width);
+  this.y = 0;
+  colorMode(HSB);
+  this.hue = random(0,255);
+  this.speed = random(0.5,4)
+  this.draw = function(){
+    fill(this.hue, 255,255);
+    circle(this.x, this.y, 50)
+    this.y = this.y + this.speed;
+    if (this.y > height){
+      this.hue = (this.hue + 5) % 255;
+      this.speed *= -0.9
+      }
+    if (this.y < 0){
+      this.y = 0;
+      this.speed *= -0.9
+    }
+    }
+}
