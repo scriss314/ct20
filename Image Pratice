@@ -1,0 +1,19 @@
+let img;
+
+function preload(){
+  img = loadImage("https://raw.githubusercontent.com/scriss314/ct20/refs/heads/main/Luna%20Cat.jpg")
+}
+
+function setup() {
+  createCanvas(800, 1000);
+}
+
+function draw() {
+  background(250,100);
+  image(img, 100,20)
+  textFont();
+  textSize(50)
+  strokeWeight(3)
+  stroke("black")
+  text("I am fat cat", 350, 350)
+}
