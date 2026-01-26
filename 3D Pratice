@@ -1,0 +1,71 @@
+let img;
+let sphereAngleA = 0;
+let sphereAngleB = 0; 
+let angle = 0;
+let yPos = 0;
+let speed = 1;
+
+function preload(){
+  img = loadImage ('https://raw.githubusercontent.com/scriss314/ct20/main/81qM0ZcNTgL.jpg')
+}
+function setup() {
+  createCanvas(400, 400, WEBGL);
+  //draw the image
+  image(img, 100,20)
+  angle = 0;
+}
+
+function draw() {
+  image(img, 1000, 200)
+  background("black");
+  rotateZ(angle);
+  orbitControl()
+  
+  angle += .035;
+  
+  torus(150,1);
+  torus(50,1);
+  torus(100,1);
+  
+  sphereAngleA += 0.02
+  sphereAngleB += 0.01
+  
+  //The sun
+  push();
+  fill("orange");
+  sphere(20,24);
+  pop();
+  // saturn
+  push();
+  rotateZ(sphereAngleB)
+  translate(150, yPos, 0);
+  fill("yellow");
+  sphere(25,24);
+  pop();
+  // Mecury
+  push()
+  rotateZ(sphereAngleA);
+  translate(50, yPos, 0)
+  fill("grey")
+  sphere(15, 24)
+  pop()
+  // Earth 
+  push()
+  translate(100, yPos, 0)
+  fill("blue")
+  sphere(15, 24)
+  pop()
+  
+  // Keep Sphere on the torus
+  if (yPos > 30 || yPos < -30){
+    speed *= -1;
+  }
+  
+  
+  //update positon
+  yPos += speed;
+  
+  if (yPos > 100 || yPos < -100){
+    speed *= -1;
+  }
+}
