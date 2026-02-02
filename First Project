@@ -1,7 +1,7 @@
 
-# This Code Project Took some time to learn and make the building of a 2D model with the illusion of a 3D model. I was going to make the Sun be in the middle, spinning around. But then I notice that it was circling around the building. Which then made me think of
-Adding the moon to match the sun and moon rising and falling. It made a lot more sense to me, but it took some time to adjust to where the position of the sun and the moon were. I had a fun time with this project, but it was a bit of a challenge since this was my first time
-learning a new program for some time. 
+# This Code Project Took some time to learn and build a 2D model with the illusion of a 3D model. I was going to make the Sun be in the middle, spinning around. But then I notice that it was circling around the building. Which then made me think of
+Adding the moon to match the sun and moon rising and falling. It made a lot more sense to me, but it took some time to adjust to where the position of the sun and the moon were. I had a fun time with this project, but it was a challenge since this was my first time
+learning a new program for some time. I did get stuck on what else to add to the building after making a small antenna. I just got stuck and wanted to turn in what I had instead of being stuck longer than intended. 
 
 let x = 120;
 let w = 100;
