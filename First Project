@@ -1,0 +1,95 @@
+
+# This Code Project Took some time to learn and make the building of a 2D model with the illusion of a 3D model. I was going to make the Sun be in the middle, spinning around. But then I notice that it was circling around the building. Which then made me think of
+Adding the moon to match the sun and moon rising and falling. It made a lot more sense to me, but it took some time to adjust to where the position of the sun and the moon were. I had a fun time with this project, but it was a bit of a challenge since this was my first time
+learning a new program for some time. 
+
+let x = 120;
+let w = 100;
+let h = 180;
+let d = 40;
+let angle = 0;
+
+function setup() {
+  createCanvas(400, 400);
+  noStroke();
+}
+
+function draw() {
+  background("lightblue");
+ 
+  // For Sun Rotation
+  push();
+  translate(200,height-50);
+  rotate(angle);
+  stroke("orange");
+  strokeWeight(10);
+  fill("orange");
+  circle(200, 95, 100);
+  pop();
+  
+  // to add the Min and Hour
+  push();
+  translate(200,100)
+  stroke("white")
+  fill("white")
+  rotate(angle);
+  strokeWeight(15);
+  line(0,0,50,0);
+  line(-50,50,0,0)
+  pop()
+  
+  // Moon Rotation
+  push()
+  translate(200,100);
+  rotate(angle);
+  stroke("midnightblue");
+  strokeWeight(10);
+  fill("midnightblue");
+  circle(200, 95, 100);
+  pop()
+  
+  angle += 0.02;
+  
+  let y = height - h; // always grounded
+  
+  // FRONT FACE
+  fill(200);
+  beginShape();
+  vertex(x, y);
+  vertex(x + w, y);
+  vertex(x + w, y + h);
+  vertex(x, y + h);
+  endShape(CLOSE);
+
+  // RIGHT FACE (slants back)
+  fill(160);
+  beginShape();
+  vertex(x + w, y);
+  vertex(x + w + d, y - d);
+  vertex(x + w + d, y + h - d + h);
+  vertex(x + w, y + h + h);
+  endShape(CLOSE);
+  
+  // TOP FACE
+fill(220);
+beginShape();
+vertex(x, y);
+vertex(x + w, y);
+vertex(x + w + d, y - d);
+vertex(x + d, y - d);
+endShape(CLOSE);
+  
+  // ANTENNA
+let antennaW = 6;
+let antennaH = 30;
+
+// top center of building
+let antennaX = x + w / 2 - antennaW / 2;
+let antennaY = y - antennaH;
+
+fill(80);
+rect(antennaX, antennaY, antennaW, antennaH);
+
+// tip
+ellipse(x + w / 2, antennaY, 8, 8);
+}
