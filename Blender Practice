@@ -1,0 +1,27 @@
+let sheep;
+
+function preload() {
+  // 2nd arg = normalize (auto scales model nicely)
+  sheep = loadModel("assets/Pratice_Extraction.obj", true);
+}
+
+function setup() {
+  createCanvas(800, 600, WEBGL);
+}
+
+function draw() {
+  background(220);
+
+  // lighting / material so you can SEE it
+  normalMaterial();          // easy “shaded” look
+  // or: ambientMaterial(200);
+
+  // move / rotate
+  rotateY(frameCount * 0.01);
+  rotateX(-0.3);
+
+  // if it's too big/small, tweak this
+  scale(0.5);
+
+  model(sheep);
+}
