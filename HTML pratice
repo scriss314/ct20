@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      
+      body{
+        width: 300px;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .neato{
+        background: grey;
+        width: 500px;
+        height: 500px;
+        border: 1px solid blue;
+        transition: all 10s ease-in-out;
+      }
+      h3{
+        text-shadow: 5px 3px 3px black;
+      }
+      p{
+        font-family: sans-serif;
+        line-height: 2em;
+        color: orange;
+        margin: 15px 0;
+      }
+      
+      .neato:hover{
+        transform: rotate(60deg)
+      }
+    </style>
+  
+
+  </head>
+  <body>
+    <div class="neato">
+      <h3> Tittle</h3>
+      <p>Doing a quick test</p>
+    </div>
+  </body>
+</html>
